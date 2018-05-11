@@ -1,7 +1,14 @@
-const heapsort = (arr) => {
+const heapsort = arr => {
   /* Your code here */
-  
+  let heap = new Heap();
+  arr.forEach(element => heap.insert(element));
+  let sorted = [];
+  while (heap.size > 0) {
+    sorted.unshift(heap.delete());
+  }
+  return sorted;
 };
+
 
 class Heap {
   constructor() {
